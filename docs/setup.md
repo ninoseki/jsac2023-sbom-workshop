@@ -13,6 +13,7 @@
   - Dev Container: `python:3.10` (Debian 11)
   - Installed packages:
     - git
+    - vim
     - curl
     - wget
     - [HTTPie](https://httpie.io/)
@@ -22,12 +23,13 @@
 
 ### Directory structure
 
-| Path                                                                   | Desc.                               |
-|------------------------------------------------------------------------|-------------------------------------|
-| /app/log4j-vulnerable-app/gradle.lockfile                              | A Gradle lock file                  |
-| /app/python-vulnerable-app/requirements.txt                            | A Pip lock file                     |
-| /workspaces/jsac2023-sbom-workshop                                     | A VS Code workspace                 |
-| /home/vscode/.cache/pypoetry/virtualenvs/jsac2023-sbom-workshop-py3.10 | A virtualenv path for the workspace |
+| Path                                        | Desc.                               |
+|---------------------------------------------|-------------------------------------|
+| /app/log4j-vulnerable-app/gradle.lockfile   | A Gradle lock file                  |
+| /app/python-vulnerable-app/requirements.txt | A Pip lock file                     |
+| /workspaces/jsac2023-sbom-workshop          | A VS Code workspace                 |
+| /workspaces/jsac2023-sbom-workshop/.venv    | A virtualenv path for the workspace |
+
 
 ## How to setup
 
@@ -76,15 +78,14 @@ $ curl localhost:8080
 {"timestamp":"2022-11-12T07:10:56.045+00:00","status":400,"error":"Bad Request","path":"/"}
 ```
 
-Note that Python requirements for the hands-on challenges are installed in a vritual environment via Poetry.
-
-So you have to use `poetry run` prefix or `poetry shell`.
+Note that Python requirements for the hands-on challenges are installed in the virtual environment via Poetry. It is activated by default.
 
 ```bash
-$ poetry run python ...
-$ poetry run pytest ...
-# or
-$ poetry shell
 $ python ...
-$ pytest
+$ pytest ...
+# or
+$ deactivate
+$ poetry run python ...
+$ poetry run pytest
 ```
+
