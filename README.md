@@ -1,1 +1,5 @@
-# jsac2023
+# JSAC2023 SBOM Workshop
+
+- [Timetable](./docs/timetable.md)
+- [Setup](./docs/setup.md)
+- [Lectures](./docs/setup.md)
