@@ -23,12 +23,12 @@
 
 ### Directory structure
 
-| Path                                                | Desc.                               |
-|-----------------------------------------------------|-------------------------------------|
-| /app/log4j-vulnerable-app/gradle.lockfile           | A Gradle lock file                  |
-| /app/python-vulnerable-app/requirements.txt         | A Pip lock file                     |
-| /workspaces/jsac2023-sbom-workshop                  | A VS Code workspace                 |
-| /workspaces/jsac2023-sbom-workshop/.venv/bin/python | A virtualenv path for the workspace |
+| Path                                        | Desc.                               |
+|---------------------------------------------|-------------------------------------|
+| /app/log4j-vulnerable-app/gradle.lockfile   | A Gradle lock file                  |
+| /app/python-vulnerable-app/requirements.txt | A Pip lock file                     |
+| /workspaces/jsac2023-sbom-workshop          | A VS Code workspace                 |
+| /workspaces/jsac2023-sbom-workshop/.venv    | A virtualenv path for the workspace |
 
 ## How to setup
 
