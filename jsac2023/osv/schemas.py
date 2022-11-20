@@ -104,9 +104,6 @@ class Vulnerability(BaseModel):
         if component is not None:
             vuln.affects = [BomTarget(ref=component.bom_ref.value)]
 
-        if component is not None:
-            vuln.affects = [BomTarget(ref=component.bom_ref.value)]
-
         return vuln
 
 
