@@ -30,6 +30,7 @@
 | /workspaces/jsac2023-sbom-workshop          | A VS Code workspace                 |
 | /workspaces/jsac2023-sbom-workshop/.venv    | A virtualenv path for the workspace |
 
+
 ## How to setup
 
 ```bash
@@ -87,3 +88,4 @@ $ deactivate
 $ poetry run python ...
 $ poetry run pytest
 ```
+
