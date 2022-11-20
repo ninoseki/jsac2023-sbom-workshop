@@ -1,3 +1,8 @@
+- [Introduction of the lab env](#introduction-of-the-lab-env)
+  * [Directory structure](#directory-structure)
+- [How to setup](#how-to-setup)
+- [How to confirm whether you are ready or not](#how-to-confirm-whether-you-are-ready-or-not)
+
 ## Introduction of the lab env
 
 - Python v3.10
@@ -12,23 +17,23 @@
     - wget
     - [HTTPie](https://httpie.io/)
     - jq
-    - [microsoft/sbom-tool]()https://github.com/microsoft/sbom-tool)
+    - [microsoft/sbom-tool](https://github.com/microsoft/sbom-tool)
     - [anchore/syft](https://github.com/anchore/syft)
 
 ### Directory structure
 
-| Path                                                     | Desc.                               |
-|----------------------------------------------------------|-------------------------------------|
-| /app/log4j-vulnerable-app/gradle.lockfile                | A Gradle lock file                  |
-| /app/python-vulnerable-app/requirements.txt              | A Pip lock file                     |
-| /workspaces/jsac2023                                     | A VS Code workspace                 |
-| /home/vscode/.cache/pypoetry/virtualenvs/jsac2023-py3.10 | A virtualenv path for the workspace |
+| Path                                                                   | Desc.                               |
+|------------------------------------------------------------------------|-------------------------------------|
+| /app/log4j-vulnerable-app/gradle.lockfile                              | A Gradle lock file                  |
+| /app/python-vulnerable-app/requirements.txt                            | A Pip lock file                     |
+| /workspaces/jsac2023-sbom-workshop                                     | A VS Code workspace                 |
+| /home/vscode/.cache/pypoetry/virtualenvs/jsac2023-sbom-workshop-py3.10 | A virtualenv path for the workspace |
 
-### How to setup
+## How to setup
 
 ```bash
-git clone https://github.com/ninoseki/jsac2023
-code jsac2023
+git clone https://github.com/ninoseki/jsac2023-sbom-workshop
+code jsac2023-sbom-workshop
 ```
 
 Click the bottom left corner button (Open a Remote Window) of VS Code.
@@ -43,12 +48,12 @@ It will start a dev container automatically.
 
 See [VS Code: Quick start: Open an existing folder in a container](https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-an-existing-folder-in-a-container) for more details.
 
-### How to confirm whether you are ready or not
+## How to confirm whether you are ready or not
 
 ```bash
 # in the host machine
-$ docker ps | grep vsc-jsac2023-
-2aaad5c554b1   vsc-jsac2023-8fb1a747384eb718800c866a3ca10992   "/bin/sh -c 'echo Co…"   About a minute ago   Up About a minute             admiring_chandrasekhar
+$ docker ps | grep vsc-jsac2023-sbom-workshop-
+552de0a989ad   vsc-jsac2023-sbom-workshop-3fca6e376833fdc5e8366e8f0fcde96e   "/bin/sh -c 'echo Co…"   About a minute ago   Up About a minute             admiring_hofstadter
 ```
 
 ```bash
@@ -59,7 +64,7 @@ $ poetry --version
 Poetry (version 1.2.2)
 
 # check pytest
-$pytest --version
+$ pytest --version
 pytest 7.2.0
 
 # check Python app is running
