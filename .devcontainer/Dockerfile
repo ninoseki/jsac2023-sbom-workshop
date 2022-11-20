@@ -29,6 +29,7 @@ RUN apt update \
 	wget \
 	git \
 	jq \
+	vim \
 	# install HTTPie
 	&& curl -SsL https://packages.httpie.io/deb/KEY.gpg | apt-key add - \
 	&& curl -SsL -o /etc/apt/sources.list.d/httpie.list https://packages.httpie.io/deb/httpie.list \
