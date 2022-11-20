@@ -1,5 +1,5 @@
 {
-  "name": "jsac2023",
+  "name": "jsac2023-sbom-workshop",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -7,7 +7,7 @@
   "remoteUser": "vscode",
   // "forwardPorts": [8000, 8080],
   "settings": {
-    "python.defaultInterpreterPath": "/home/vscode/.cache/pypoetry/virtualenvs/jsac2023-py3.10/bin/python",
+    "python.defaultInterpreterPath": "/workspaces/jsac2023-sbom-workshop/.venv/bin/python",
     "terminal.integrated.profiles.linux": {
       "bash": {
         "path": "/bin/bash"
