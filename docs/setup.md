@@ -77,7 +77,7 @@ $ curl localhost:8080
 {"timestamp":"2022-11-12T07:10:56.045+00:00","status":400,"error":"Bad Request","path":"/"}
 ```
 
-Note that Python requirements for the hands-on challenges are installed in a vritual environment via Poetry. It is activated by default.
+Note that Python requirements for the hands-on challenges are installed in the virtual environment via Poetry. It is activated by default.
 
 ```bash
 $ python ...
