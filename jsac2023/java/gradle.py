@@ -26,6 +26,7 @@ def to_component(*, group: str, artifact: str, version: str) -> Component:
 
 
 def parse_gradle_lock(path: str) -> list[Component]:
+    """Parse gradle.lockfile and convert it into a list of components"""
     components: list[Component] = []
 
     with open(path) as f:
