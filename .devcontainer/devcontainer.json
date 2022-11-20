@@ -1,0 +1,19 @@
+{
+  "name": "jsac2023",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "extensions": ["ms-python.python"],
+  "remoteUser": "vscode",
+  // "forwardPorts": [8000, 8080],
+  "settings": {
+    "python.defaultInterpreterPath": "/home/vscode/.cache/pypoetry/virtualenvs/jsac2023-py3.10/bin/python",
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "/bin/bash"
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "postCreateCommand": "bash /app/postCreateCommand.sh"
+}
