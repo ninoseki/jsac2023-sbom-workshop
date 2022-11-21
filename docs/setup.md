@@ -9,7 +9,7 @@
 - Poetry v1.2+
 - CycloneDX v1.4
 - Docker v20+
-- VS Code + Dev Container
+- VS Code + [Remote Development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
   - Dev Container: `python:3.10` (Debian 11)
   - Installed packages:
     - git
@@ -31,6 +31,8 @@
 | /workspaces/jsac2023-sbom-workshop/.venv    | A virtualenv path for the workspace |
 
 ## How to setup
+
+Please make sure to install the [Remote Development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) before proceeding further.
 
 ```bash
 git clone https://github.com/ninoseki/jsac2023-sbom-workshop
