@@ -17,6 +17,9 @@
 - [Linux Foundation - The Software Package Data Exchange (SPDX)](https://spdx.dev/)
 - [NIST - Software Identification (SWID)](https://csrc.nist.gov/projects/Software-Identification-SWID)
 
+![](https://i.imgur.com/maPJgMX.png)
+(Source: [NITA: Framing Software Component Transparency: Establishing a Common Software Bill of Materials (SBOM)](https://ntia.gov/files/ntia/publications/ntia_sbom_framing_2nd_edition_20211021.pdf))
+
 ### CycloneDX
 
 - [Overview](https://cyclonedx.org/specification/overview/)
@@ -48,7 +51,7 @@ Note: SPDX supports the package URL since 2019. ([chapters/appendix-VI: Add PURL
 > scheme:type/namespace/name@version?qualifiers#subpath
 > Components are separated by a specific character for unambiguous > parsing.
 >
-> The defintion for each components is:
+> The definition for each components is:
 >
 > **scheme**: this is the URL scheme with the constant value of "pkg". One of the primary reason for this single scheme is to facilitate the future official registration of the "pkg" scheme for package URLs. Required.
 > **type**: the package "type" or package "protocol" such as maven, npm, nuget, gem, pypi, etc. Required.
