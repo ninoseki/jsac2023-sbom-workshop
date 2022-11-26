@@ -5,9 +5,9 @@ from packageurl import PackageURL
 alphanums_plus = pp.Word(pp.alphanums + ".-_")
 pattern = (
     pp.LineStart()
-    + alphanums_plus.set_results_name("group")
+    + alphanums_plus.set_results_name("group_id")
     + ":"
-    + alphanums_plus.set_results_name("artifact")
+    + alphanums_plus.set_results_name("artifact_id")
     + ":"
     + alphanums_plus.set_results_name("version")
     + "="
@@ -16,12 +16,14 @@ pattern = (
 )
 
 
-def to_component(*, group: str, artifact: str, version: str) -> Component:
-    component_name = f"{group}:{artifact}"
+def to_component(*, group_id: str, artifact_id: str, version: str) -> Component:
+    component_name = f"{group_id}:{artifact_id}"
     return Component(
         name=component_name,
         version=version,
-        purl=PackageURL(type="maven", namespace=group, name=artifact, version=version),
+        purl=PackageURL(
+            type="maven", namespace=group_id, name=artifact_id, version=version
+        ),
     )
 
 
@@ -37,12 +39,14 @@ def parse_gradle_lock(path: str) -> list[Component]:
             except pp.exceptions.ParseException:
                 continue
 
-            group = parsed.get("group", "")
-            artifact = parsed.get("artifact", "")
+            group_id = parsed.get("group_id", "")
+            artifact_id = parsed.get("artifact_id", "")
             version = parsed.get("version", "")
 
             components.append(
-                to_component(group=group, artifact=artifact, version=version)
+                to_component(
+                    group_id=group_id, artifact_id=artifact_id, version=version
+                )
             )
 
     return components
