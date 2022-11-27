@@ -18,6 +18,7 @@ def maven_purl():
 
 
 @vcr.use_cassette("tests/fixtures/vcr_cassettes/osv_query_by_purl.yaml")
-def test_query_by_purl_maven(maven_purl: PackageURL, osv: OSV):
-    res = osv.query_by_purl(maven_purl)
+@pytest.mark.asyncio
+async def test_query_by_purl_maven(maven_purl: PackageURL, osv: OSV):
+    res = await osv.query_by_purl(maven_purl)
     assert isinstance(res, schemas.Vulnerabilities)
