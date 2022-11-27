@@ -8,6 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+aiometer = ">=0.3,<1.0"
 cvss = ">=2.5,<3.0"
 cyclonedx-bom = ">=3.7,<4.0"
 httpx = ">=0.23,<1.0"
@@ -22,13 +23,14 @@ typer = ">=0.7,<1.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
-flake8 = "^5.0.4"
+flake8 = "^6.0.0"
 mypy = "^0.991"
 pre-commit = "^2.20.0"
 pycodestyle = "^2.9.1"
 pytest = "^7.2.0"
-vcrpy = "^4.2.1"
+pytest-asyncio = "^0.20.2"
 types-setuptools = "^65.5"
+vcrpy = "^4.2.1"
 
 [build-system]
 requires = ["poetry-core"]
