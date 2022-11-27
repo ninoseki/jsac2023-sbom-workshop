@@ -18,24 +18,24 @@ def component_type_to_ecosystem(component_type: str) -> str:
 class OSV:
     def __init__(self, base_url: str = "https://api.osv.dev", *, timeout: int = 60):
         self.base_url = base_url
-        self.timeout = timeout
+        self.client = httpx.AsyncClient(timeout=timeout)
 
     def _url_for(self, path: str) -> str:
         return self.base_url + path
 
-    def _post(
+    async def _post(
         self,
         path: str,
         json=dict[Any, Any],
     ) -> httpx.Response:
         url = self._url_for(path)
 
-        res = httpx.post(url, json=json, timeout=self.timeout)
+        res = await self.client.post(url, json=json)
         res.raise_for_status()
 
         return res
 
-    def query_by_purl(self, purl: PackageURL) -> schemas.Vulnerabilities:
+    async def query_by_purl(self, purl: PackageURL) -> schemas.Vulnerabilities:
         ecosystem = component_type_to_ecosystem(purl.type)
         version = str(purl.version)
 
@@ -45,7 +45,7 @@ class OSV:
 
         name += str(purl.name)
 
-        res = self._post(
+        res = await self._post(
             "/v1/query",
             json={
                 "version": version,
