@@ -1,4 +1,5 @@
 - [What is SBOM?](#what-is-sbom)
+- [SBOM use cases](#sbom-use-cases)
 - [SBOM standards](#sbom-standards)
   * [CycloneDX](#cyclonedx)
   * [SPDX](#spdx)
@@ -10,6 +11,11 @@
 
 > A “software bill of materials” (SBOM) has emerged as a key building block in software security and software supply chain risk management. A SBOM is a nested inventory, a list of ingredients that make up software components.
 > --- https://www.cisa.gov/sbom
+
+## SBOM use cases
+
+- Compliance/license management
+- Vulnerability management
 
 ## SBOM standards
 
