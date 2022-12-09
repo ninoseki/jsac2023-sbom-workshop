@@ -1,8 +1,10 @@
-- [Very basics of CycloneDX/cyclonedx-python](#very-basics-of-cyclonedxcyclonedx-python)
+- [Very basics of CycloneDX/cyclonedx-python-lib](#very-basics-of-cyclonedxcyclonedx-python-lib)
 - [microsoft/sbom-tool](#microsoftsbom-tool)
 - [anchore/syft](#anchoresyft)
 
-## Very basics of CycloneDX/cyclonedx-python
+## Very basics of CycloneDX/cyclonedx-python-lib
+
+- [CycloneDX/cyclonedx-python-lib](https://github.com/CycloneDX/cyclonedx-python-lib) ([Docs](https://cyclonedx-python-library.readthedocs.io/en/latest/))
 
 ```python
 from cyclonedx.model.bom import Bom
