@@ -1,37 +1,27 @@
 - [Introduction of the lab env](#introduction-of-the-lab-env)
-  * [Directory structure](#directory-structure)
-- [How to setup](#how-to-setup)
+- [How to setup the lab env](#how-to-setup-the-lab-env)
 - [How to confirm whether you are ready or not](#how-to-confirm-whether-you-are-ready-or-not)
+- [The lab env Directory structure](#the-lab-env-directory-structure)
 
 ## Introduction of the lab env
 
-- Python v3.10
-- Poetry v1.2+
-- CycloneDX v1.4
 - Docker v20+
 - VS Code + [Remote Development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
   - Dev Container: `python:3.10` (Debian 11)
   - Installed packages:
-    - git
-    - vim
-    - curl
-    - wget
-    - [HTTPie](https://httpie.io/)
-    - jq
-    - [microsoft/sbom-tool](https://github.com/microsoft/sbom-tool)
-    - [anchore/syft](https://github.com/anchore/syft)
+    - Dev/utility:
+        - [Poetry](https://python-poetry.org/)
+        - git
+        - vim
+        - curl
+        - wget
+        - [HTTPie](https://httpie.io/)
+        - jq
+    - SBOM:
+        - [microsoft/sbom-tool](https://github.com/microsoft/sbom-tool)
+        - [anchore/syft](https://github.com/anchore/syft)
 
-### Directory structure
-
-| Path                                        | Desc.                               |
-|---------------------------------------------|-------------------------------------|
-| /app/log4j-vulnerable-app/gradle.lockfile   | A Gradle lock file                  |
-| /app/python-vulnerable-app/requirements.txt | A Pip lock file                     |
-| /workspaces/jsac2023-sbom-workshop          | A VS Code workspace                 |
-| /workspaces/jsac2023-sbom-workshop/.venv    | A virtualenv path for the workspace |
-
-
-## How to setup
+## How to setup the lab env
 
 Please make sure to install the [Remote Development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) before proceeding further.
 
@@ -91,3 +81,11 @@ $ poetry run python ...
 $ poetry run pytest
 ```
 
+# The lab env directory structure
+
+| Path                                          | Desc.                               |
+|-----------------------------------------------|-------------------------------------|
+| `/app/log4j-vulnerable-app/gradle.lockfile`   | A Gradle lock file                  |
+| `/app/python-vulnerable-app/requirements.txt` | A Pip lock file                     |
+| `/workspaces/jsac2023-sbom-workshop`          | A VS Code workspace                 |
+| `/workspaces/jsac2023-sbom-workshop/.venv`    | A virtualenv path for the workspace |
