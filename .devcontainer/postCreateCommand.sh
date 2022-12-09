@@ -15,7 +15,7 @@ pip install --user -r requirements.txt --quiet
 
 poetry config virtualenvs.in-project true --local
 
-echo "Install depdencies by Poetry..."
+echo "Install dependencies by Poetry..."
 poetry install --no-ansi -q -n
 
 echo "Done! You are ready for the workshop."
