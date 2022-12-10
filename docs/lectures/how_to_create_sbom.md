@@ -54,6 +54,28 @@ cat _manifest/spdx_2.2/manifest.spdx.json | jq ".packages[] | .externalRefs[]? |
 - Notes:
   - `sbom-tool` v0.3.0 overlooks a PyPI requirement which has extras.
 
+### How it works
+
+`sbom-tool` scans the filesystem along with [microsoft/component-detection](https://github.com/microsoft/component-detection).
+
+`component-detection` supports the following ecosystems.
+
+| Ecosystem | Detection mechanisms                                                                                                       |
+|-----------|----------------------------------------------------------------------------------------------------------------------------|
+| Cargo     | `Cargo.lock` or `Cargo.toml`                                                                                               |
+| CocoaPods | `Podfile.lock`                                                                                                             |
+| Go        | `go list -m -json all`, `go mod graph`, `go.mod`, `go.sum`                                                                 |
+| Gradle    | `.lockfile`                                                                                                                |
+| Maven     | `pom.xml` or `mvn dependency:tree -f {pom.xml}`                                                                            |
+| NPM       | `package.json`, `package-lock.json`, `npm-shrinkwrap.json`, `lerna.json`,`yarn.lock` (Yarn), `pnpm-lock.yaml` (Pnpm), etc. |
+| NuGet     | `project.assets.json`, `.nupkg`, `.nuspec`, `nuget.config`                                                                 |
+| PyPI      | `setup.py`, `requirements.txt`, `poetry.lock` (Poetry), etc.                                                               |
+| RubyGems  | `Gemfile.lock`                                                                                                             |
+
+(Based on `sbom-tool` v0.3.1 / `component-detection` v2.0.9)
+
+See https://github.com/microsoft/component-detection/blob/main/docs/feature-overview.md for more details.
+
 ## anchore/syft
 
 > A CLI tool and Go library for generating a Software Bill of Materials (SBOM) from container images and filesystems. Exceptional for vulnerability detection when used with a scanner like Grype.
@@ -69,3 +91,26 @@ syft <image_or_path> -o <format>
 syft /app/python-vulnerable-app/ -o cyclonedx-json | jq ".components[] | .purl"
 syft /app/log4j-vulnerable-app/ -o cyclonedx-json | jq ".components[] | .purl"
 ```
+
+### How it works
+
+`syft` scans the filesystem with supporting the following ecosystems and others.
+
+| Ecosystem            | Notes                                                                                 |
+|----------------------|---------------------------------------------------------------------------------------|
+| .NET                 | `.deps.json`                                                                          |
+| Cargo                | Inspecting Rust executable (`cargo-audit` is required), `Cargo.lock`                  |
+| CocoaPods            | `Podfile.lock`                                                                        |
+| Conan (C/C++)        | `conanfile.txt`, `conanfile.lock`                                                     |
+| Go                   | Inspecting Go executable, `go.mod`                                                    |
+| Stack (Haskell)      | `stack.yaml`, `stack.yaml.lock`                                                       |
+| Maven                | `MANIFEST.MF`, `pom.properties`, `pom.xml`                                            |
+| NPM                  | `package.json`, `package-lock.json`, `yarn.lock` (Yarn), `pnpm-lock.yaml` (Pnpm)      |
+| Packagist (Composer) | `composer.lock`, `installed.json`                                                     |
+| Pub (Dart)           | `pubspec.lock`                                                                        |
+| PyPI                 | `setup.py`, `requirements.txt`, `pipfile.lock` (Pipenv), `poetry.lock` (Poetry), etc. |
+| RubyGems             | `Gemfile.lock`, `.gemspec`                                                            |
+
+(Based on `syft` v0.62.3)
+
+See https://github.com/anchore/syft/tree/main/syft/pkg/cataloger for more details.
