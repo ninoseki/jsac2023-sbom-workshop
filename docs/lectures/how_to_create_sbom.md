@@ -96,7 +96,7 @@ syft /app/log4j-vulnerable-app/ -o cyclonedx-json | jq ".components[] | .purl"
 
 `syft` scans the filesystem with supporting the following ecosystems and others.
 
-| Ecosystem            | Notes                                                                                 |
+| Ecosystem            | Detection mechanisms                                                                  |
 |----------------------|---------------------------------------------------------------------------------------|
 | .NET                 | `.deps.json`                                                                          |
 | Cargo                | Inspecting Rust executable (`cargo-audit` is required), `Cargo.lock`                  |
