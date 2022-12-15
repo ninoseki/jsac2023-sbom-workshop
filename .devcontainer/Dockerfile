@@ -48,7 +48,7 @@ COPY --chown=$USERNAME --from=builder /home/gradle/src/build/libs/*.jar /app/log
 COPY --chown=$USERNAME --from=builder /home/gradle/src/gradle.lockfile /app/log4j-vulnerable-app/gradle.lockfile
 
 COPY --chown=$USERNAME python-vulnerable-app /app/python-vulnerable-app
-COPY --chown=$USERNAME postCreateCommand.sh .
+COPY --chown=$USERNAME postCreateCommand.sh postStartCommand.sh /app/
 
 RUN pip install -U pip \
 	&& pip install --no-cache-dir -r /app/python-vulnerable-app/requirements.txt
