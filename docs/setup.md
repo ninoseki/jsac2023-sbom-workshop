@@ -5,7 +5,7 @@
 
 ## Introduction of the lab env
 
-- Docker v20+
+- Docker Desktop 2.0+ (Linux: Docker CE/EE 18+ and Docker Compose 1.2+)
 - VS Code + [Remote Development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
   - Dev Container: `python:3.10` (Debian 11)
   - Installed packages:
