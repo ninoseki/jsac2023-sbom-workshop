@@ -15,5 +15,6 @@
     },
     "terminal.integrated.defaultProfile.linux": "bash"
   },
-  "postCreateCommand": "bash /app/postCreateCommand.sh"
+  "postCreateCommand": "bash /app/postCreateCommand.sh",
+  "postStartCommand": "bash /app/postStartCommand.sh"
 }
