@@ -10,6 +10,7 @@
 ## What is SBOM?
 
 > A “software bill of materials” (SBOM) has emerged as a key building block in software security and software supply chain risk management. A SBOM is a nested inventory, a list of ingredients that make up software components.
+>
 > --- https://www.cisa.gov/sbom
 
 ## SBOM use cases
@@ -67,6 +68,7 @@ Note: SPDX supports the package URL since 2019. ([chapters/appendix-VI: Add PURL
 > **version**: the version of the package. Optional.
 > **qualifiers**: extra qualifying data for a package such as an OS, architecture, a distro, etc. Optional and type-specific.
 > **subpath**: extra subpath within a package, relative to the package root. Optional.
+>
 > --- https://github.com/package-url/purl-spec
 
 - Examples:
