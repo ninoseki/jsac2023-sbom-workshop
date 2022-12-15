@@ -70,6 +70,19 @@ $ curl localhost:8080
 {"timestamp":"2022-11-12T07:10:56.045+00:00","status":400,"error":"Bad Request","path":"/"}
 ```
 
+If you fail to check Python/Java app's running status by curl, please execute the following command.
+
+```bash
+# the script kicks off the apps
+/app/postStartCommand.sh
+
+# then it will work
+curl localhost:8000
+curl localhost:8080
+```
+
+If you still have the issue, please rebuild the container.
+
 Note that Python requirements for the hands-on challenges are installed in the virtual environment via Poetry. It is activated by default.
 
 ```bash
