@@ -31,6 +31,7 @@ print(output_instance.output_as_string())
 ## microsoft/sbom-tool
 
 > The SBOM tool is a highly scalable and enterprise ready tool to create SPDX 2.2 compatible SBOMs for any variety of artifacts.
+>
 > --- https://github.com/microsoft/sbom-tool
 
 **Usage**
@@ -79,6 +80,7 @@ See https://github.com/microsoft/component-detection/blob/main/docs/feature-over
 ## anchore/syft
 
 > A CLI tool and Go library for generating a Software Bill of Materials (SBOM) from container images and filesystems. Exceptional for vulnerability detection when used with a scanner like Grype.
+>
 > --- https://github.com/anchore/syft
 
 **Usage**
