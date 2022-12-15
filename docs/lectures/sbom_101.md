@@ -24,6 +24,7 @@
 - [NIST - Software Identification (SWID)](https://csrc.nist.gov/projects/Software-Identification-SWID)
 
 ![](https://i.imgur.com/maPJgMX.png)
+
 (Source: [NITA: Framing Software Component Transparency: Establishing a Common Software Bill of Materials (SBOM)](https://ntia.gov/files/ntia/publications/ntia_sbom_framing_2nd_edition_20211021.pdf))
 
 ### CycloneDX
