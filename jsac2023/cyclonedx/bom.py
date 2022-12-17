@@ -1,5 +1,6 @@
 from cyclonedx.model.bom import Bom
 from cyclonedx.model.component import Component
+from cyclonedx.output import OutputFormat, get_instance
 
 
 def uniquify_components(components: list[Component]):
@@ -25,3 +26,8 @@ def components_to_bom(components: list[Component], uniquify: bool = True) -> Bom
         components = uniquify_components(components)
 
     return Bom(components=components)
+
+
+def convert_as_json(bom: Bom) -> str:
+    output = get_instance(bom, output_format=OutputFormat.JSON)
+    return output.output_as_string()
