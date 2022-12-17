@@ -2,7 +2,7 @@ import typer
 from cyclonedx.model.bom import Bom
 from cyclonedx.model.component import Component
 
-from jsac2023.cyclonedx.bom import components_to_bom, convert_as_json
+from jsac2023.cyclonedx import components_to_bom, convert_as_json
 
 from .app import app
 
