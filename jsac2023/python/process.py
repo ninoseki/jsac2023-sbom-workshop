@@ -74,6 +74,12 @@ def get_processes() -> list[psutil.Process]:
     return [p for p in processes if p is not None]
 
 
-def get_py_processes() -> list[psutil.Process]:
+def get_py_processes(reject_self_pid: bool = True) -> list[psutil.Process]:
     processes = get_processes()
-    return [p for p in processes if is_python_process(p)]
+    py_processes = [p for p in processes if is_python_process(p)]
+
+    if not reject_self_pid:
+        return py_processes
+
+    self_pid = os.getpid()
+    return [p for p in py_processes if p.pid != self_pid]
