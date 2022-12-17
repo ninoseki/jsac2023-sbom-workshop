@@ -1,7 +1,0 @@
-{
-	"type": "library",
-	"bom-ref": "3a52d54a-736b-487a-aef6-e97dbd3dc338",
-	"name": "anyio",
-	"version": "3.6.2",
-	"purl": "pkg:pypi/anyio@3.6.2"
-}
