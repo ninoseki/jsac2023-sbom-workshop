@@ -17,9 +17,10 @@
         - wget
         - [HTTPie](https://httpie.io/)
         - jq
-    - SBOM:
+    - SBOM/OSV:
         - [microsoft/sbom-tool](https://github.com/microsoft/sbom-tool)
         - [anchore/syft](https://github.com/anchore/syft)
+        - [google/osv-scanner](https://github.com/google/osv-scanner)
 
 ## How to setup the lab env
 
