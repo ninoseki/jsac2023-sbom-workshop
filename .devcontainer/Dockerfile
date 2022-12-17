@@ -59,4 +59,7 @@ WORKDIR /tools
 RUN curl -Lo sbom-tool https://github.com/microsoft/sbom-tool/releases/latest/download/sbom-tool-linux-x64 \
 	&& chmod +x sbom-tool \
 	&& sudo mv sbom-tool /usr/local/bin \
-	&& curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sudo sh -s -- -b /usr/local/bin
+	&& curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sudo sh -s -- -b /usr/local/bin \
+	&& curl -Lo osv-scanner https://github.com/google/osv-scanner/releases/download/v1.0.1/osv-scanner_1.0.1_linux_amd64 \
+	&& chmod +x osv-scanner \
+	&& sudo mv osv-scanner /usr/local/bin
