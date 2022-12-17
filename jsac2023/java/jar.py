@@ -1,5 +1,3 @@
-from pathlib import Path
-
 import typer
 from cyclonedx.model.component import Component
 
@@ -8,7 +6,7 @@ from jsac2023.cyclonedx import components_to_bom, convert_as_json
 from .app import app
 
 
-def parse_jar(path: str | Path) -> list[Component]:
+def parse_jar(path: str) -> list[Component]:
     """Parse JAR file and convert it into a list of components"""
     raise NotImplementedError()
 
