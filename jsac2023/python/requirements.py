@@ -1,7 +1,12 @@
+import typer
 from cyclonedx.model.component import Component
 from packageurl import PackageURL
 from pip_audit._dependency_source import RequirementSource, ResolveLibResolver
 from pip_audit._service.interface import ResolvedDependency
+
+from jsac2023.cyclonedx.bom import components_to_bom, convert_as_json
+
+from .app import app
 
 """
 # very basic answer:
@@ -40,3 +45,12 @@ def parse_requirements(path: str) -> list[Component]:
     """Parse requirements.txt and convert it into a list of components"""
     source = RequirementSource(filenames=[path], resolver=ResolveLibResolver())
     return [dependency_to_component(dependency) for dependency in source.collect()]
+
+
+@app.command(help="Parse requirements.txt and build CycloneDX SBOM")
+def requirements(
+    path: str = typer.Argument(..., help="Path to requirement.txt")
+) -> None:
+    components = parse_requirements(path)
+    bom = components_to_bom(components)
+    print(convert_as_json(bom))  # noqa: T201

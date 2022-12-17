@@ -2,8 +2,13 @@ import tempfile
 import zipfile
 from pathlib import Path
 
+import typer
 from cyclonedx.model.component import Component
 from packageurl import PackageURL
+
+from jsac2023.cyclonedx.bom import components_to_bom, convert_as_json
+
+from .app import app
 
 
 def to_component(*, group: str, artifact: str, version: str) -> Component:
@@ -68,3 +73,10 @@ def parse_jar(path: str | Path) -> list[Component]:
             components.extend(parse_jar(jar_path))
 
     return components
+
+
+@app.command(help="Parse JAR file and build CycloneDX SBOM")
+def jar(path: str = typer.Argument(..., help="Path to JAR file")) -> None:
+    components = parse_jar(path)
+    bom = components_to_bom(components)
+    print(convert_as_json(bom))  # noqa: T201

@@ -2,8 +2,7 @@ import os
 
 import psutil
 import pyparsing as pp
-
-from jsac2023.utils import get_command
+import sh
 
 python_version_prefix = pp.Keyword("Python") + pp.White(exact=1)
 number_after_dot = pp.Word(pp.nums) + pp.Optional(pp.Literal("."))
@@ -11,6 +10,10 @@ python_version_suffix = pp.OneOrMore(number_after_dot)
 python_version = (
     pp.LineStart() + python_version_prefix + python_version_suffix + pp.LineEnd()
 )
+
+
+def get_command(path: str) -> sh.Command:
+    return sh.Command(path)
 
 
 def am_i_root() -> bool:

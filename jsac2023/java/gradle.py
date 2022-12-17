@@ -1,6 +1,11 @@
 import pyparsing as pp
+import typer
 from cyclonedx.model.component import Component
 from packageurl import PackageURL
+
+from jsac2023.cyclonedx.bom import components_to_bom, convert_as_json
+
+from .app import app
 
 alphanums_plus = pp.Word(pp.alphanums + ".-_")
 pattern = (
@@ -50,3 +55,10 @@ def parse_gradle_lock(path: str) -> list[Component]:
             )
 
     return components
+
+
+@app.command(help="Parse gradle.lockfile and build CycloneDX SBOM")
+def gradle(path: str = typer.Argument(..., help="Path to gradle.lockfile")) -> None:
+    components = parse_gradle_lock(path)
+    bom = components_to_bom(components)
+    print(convert_as_json(bom))  # noqa: T201
