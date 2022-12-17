@@ -6,7 +6,7 @@ import psutil
 from cyclonedx.model.component import Component, Property
 from packageurl import PackageURL
 
-from jsac2023.cyclonedx.bom import components_to_bom, convert_as_json
+from jsac2023.cyclonedx import components_to_bom, convert_as_json
 
 from .app import app
 from .process import am_i_root, get_command, get_py_processes, get_python_in_cmdline

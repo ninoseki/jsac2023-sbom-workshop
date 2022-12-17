@@ -4,7 +4,7 @@ from packageurl import PackageURL
 from pip_audit._dependency_source import RequirementSource, ResolveLibResolver
 from pip_audit._service.interface import ResolvedDependency
 
-from jsac2023.cyclonedx.bom import components_to_bom, convert_as_json
+from jsac2023.cyclonedx import components_to_bom, convert_as_json
 
 from .app import app
 
