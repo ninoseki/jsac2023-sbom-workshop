@@ -19,13 +19,12 @@ sh = ">=1.14,<2.0"
 typer = ">=0.7,<1.0"
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.10.0"
+black = "^22.12.0"
 flake8 = "^6.0.0"
 mypy = "^0.991"
 pre-commit = "^2.20.0"
-pycodestyle = "^2.9.1"
+pycodestyle = "^2.10.0"
 pytest = "^7.2.0"
-pytest-asyncio = "^0.20.2"
 types-setuptools = "^65.5"
 vcrpy = "^4.2.1"
 
