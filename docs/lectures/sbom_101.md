@@ -1,11 +1,10 @@
 - [What is SBOM?](#what-is-sbom)
 - [SBOM use cases](#sbom-use-cases)
 - [SBOM standards](#sbom-standards)
-  * [CycloneDX](#cyclonedx)
-  * [SPDX](#spdx)
-  * [SWID](#swid)
+- [SBOM types](#sbom-types)
 - [Why CycloneDX?](#why-cyclonedx)
 - [Package URL](#package-url)
+- [SBOM examples with/without package URL](#sbom-examples-withwithout-package-url)
 
 ## What is SBOM?
 
@@ -18,12 +17,6 @@
 - Compliance/license management
 - Vulnerability management
 
-## Types of SBOM
-
-![](https://i.imgur.com/aWjPAgB.png)
-
-(Source: [Satisfying Safety Standards with the SPDX Build Profile - Brandon Lum, Google & Kate Stewart, The Linux Foundation](https://static.sched.com/hosted_files/ocs2022/25/OSS%20JP_%20Satisfying%20Safety%20Standards%20with%20the%20SPDX%20Build%20Profile.pdf))
-
 ## SBOM standards
 
 - [OWASP - CycloneDX](https://cyclonedx.org/)
@@ -34,17 +27,75 @@
 
 (Source: [NITA: Framing Software Component Transparency: Establishing a Common Software Bill of Materials (SBOM)](https://ntia.gov/files/ntia/publications/ntia_sbom_framing_2nd_edition_20211021.pdf))
 
+## SBOM types
+
+![](https://i.imgur.com/aWjPAgB.png)
+
+(Source: [Satisfying Safety Standards with the SPDX Build Profile - Brandon Lum, Google & Kate Stewart, The Linux Foundation](https://static.sched.com/hosted_files/ocs2022/25/OSS%20JP_%20Satisfying%20Safety%20Standards%20with%20the%20SPDX%20Build%20Profile.pdf))
+
 ### CycloneDX
 
 - [Overview](https://cyclonedx.org/specification/overview/)
 - [JSON schema](https://cyclonedx.org/docs/1.4/json/#vulnerabilities)
 - [CycloneDX/bom-examples](https://github.com/CycloneDX/bom-examples)
 
+#### CycloneDX example
+
+```json
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "pkg:pypi/requests@2.18.1?package-id=eb69e0d8ffbe36cd",
+      "type": "library",
+      "name": "requests",
+      "version": "2.18.1",
+      "cpe": "cpe:2.3:a:python-requests:python-requests:2.18.1:*:*:*:*:*:*:*",
+      "purl": "pkg:pypi/requests@2.18.1"
+    }
+  ]
+}
+```
+
 ### SPDX
 
 - [Overview](https://spdx.dev/about/)
 - [JSON schema (spdx/spdx-spec)](https://github.com/spdx/spdx-spec/blob/development/v2.3.1/schemas/spdx-schema.json)
 - [Examples (spdx/spdx-spec)](https://github.com/spdx/spdx-spec/tree/development/v2.3.1/examples)
+
+#### SPDX example
+
+```json
+{
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "dummy",
+  "creationInfo": {
+    "created": "2022-12-18T01:41:33Z",
+    "creators": []
+  },
+  "documentDescribes": [
+    "SPDXRef-RootPackage"
+  ],
+  "packages": [
+    {
+      "name": "requests",
+      "SPDXID": "SPDXRef-Package-A246603723488138A7C126B0E7E0441D189E84D136E3CC4250114C790EFFCE80",
+      "versionInfo": "2.18.1",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:pypi/requests@2.18.1"
+        }
+      ]
+    }
+  ]
+}
+```
 
 ### SWID
 
@@ -83,3 +134,58 @@ Note: SPDX supports the package URL since 2019. ([chapters/appendix-VI: Add PURL
   - `pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1` (or `pkg:gradle/org.apache.logging.log4j/log4j-core@2.14.1`)
     - https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.14.1
     - Note: `org.apache.logging.log4j` is a namespace (= Maven Group ID)
+
+## SBOM examples with/without package URL
+
+### CycloneDX
+
+**Without Package URL**
+
+```json
+{
+  "bom-ref": "dummy",
+  "type": "library",
+  "name": "requests",
+  "version": "2.18.1"
+}
+```
+
+**With Package URL**
+
+```json
+{
+  "bom-ref": "dummy",
+  "type": "library",
+  "name": "requests",
+  "version": "2.18.1",
+  "purl": "pkg:pypi/requests@2.18.1"
+}
+```
+
+### SPDX
+
+**Without Package URL**
+
+```json
+{
+  "name": "requests",
+  "SPDXID": "SPDXRef-Package-A246603723488138A7C126B0E7E0441D189E84D136E3CC4250114C790EFFCE80",
+  "versionInfo": "2.18.1"
+}
+```
+
+**With Package URL**
+```json
+{
+  "name": "requests",
+  "SPDXID": "SPDXRef-Package-A246603723488138A7C126B0E7E0441D189E84D136E3CC4250114C790EFFCE80",
+  "versionInfo": "2.18.1",
+  "externalRefs": [
+    {
+      "referenceCategory": "PACKAGE-MANAGER",
+      "referenceType": "purl",
+      "referenceLocator": "pkg:pypi/requests@2.18.1"
+    }
+  ]
+}
+```
