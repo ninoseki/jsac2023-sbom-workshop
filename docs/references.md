@@ -15,6 +15,7 @@
 - [aquasecurity/trivy](https://github.com/aquasecurity/trivy): Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more
 - [google/osv.dev](https://github.com/google/osv.dev): Open source vulnerability DB and triage service
 - [devops-kung-fu/bomber](https://github.com/devops-kung-fu/bomber): Scans Software Bill of Materials (SBOMs) for security vulnerabilities
+- [google/osv-scanner](https://github.com/google/osv-scanner): Vulnerability scanner written in Go which uses the data provided by https://osv.dev
 - [ninoseki/mihama](https://github.com/ninoseki/mihama): osv.dev API clone for on-premise usage
 
 ## Presentations/videos
