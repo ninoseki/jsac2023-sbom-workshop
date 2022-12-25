@@ -12,5 +12,6 @@
 | 01:10 - 01:20 | Lecture  | Why runtime SBOM is better                  | [Link](./lectures/why_runtime_sbom_is_better.md) |
 | 01:20 - 01:35 | Hands-on | Site package based SBOM generation (Python) | [Link](./challenges/3.md)                        |
 | 01:35 - 01:40 | Hands-on | Runtime SBOM in Java                        | [Link](./challenges/4.md)                        |
-| 01:40 - 01:50 | Hands-on | SBOM based vulnerability detection with OSV | [Link](./challenges/5.md)                        |
-| 01:50 - 02:00 |          | Wrap-up & QA                                |                                                  |
+| 01:40 - 01:50 | Lecture  | OSV 101                                     | [Link](./lectures/osv_101.md)                    |
+| 01:50 - 01:55 | Hands-on | SBOM based vulnerability detection with OSV | [Link](./challenges/5.md)                        |
+| 01:55 - 02:00 |          | Wrap-up & QA                                |                                                  |
