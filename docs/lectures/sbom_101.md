@@ -104,8 +104,7 @@
 
 ## Why CycloneDX?
 
-![img](https://i.imgur.com/YcO4jVg.png)
-(https://twitter.com/stevespringett/status/1019980949730283520)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I’ve looked into SWID and SPDX and neither in their current state are robust enough to be used for software security. So ended up writing <a href="https://twitter.com/hashtag/CycloneDX?src=hash&amp;ref_src=twsrc%5Etfw">#CycloneDX</a> because nothing else existed. Support for <a href="https://twitter.com/hashtag/PackageURL?src=hash&amp;ref_src=twsrc%5Etfw">#PackageURL</a> is crucial in identifying a components ecosystem though. <a href="https://twitter.com/hashtag/SBoM?src=hash&amp;ref_src=twsrc%5Etfw">#SBoM</a> <a href="https://twitter.com/hashtag/NTIA?src=hash&amp;ref_src=twsrc%5Etfw">#NTIA</a></p>&mdash; Steve Springett (@stevespringett@infosec.exchange) (@stevespringett) <a href="https://twitter.com/stevespringett/status/1019980949730283520?ref_src=twsrc%5Etfw">July 19, 2018</a></blockquote>
 
 Note: SPDX supports the package URL since 2019. ([chapters/appendix-VI: Add PURL #152](https://github.com/spdx/spdx-spec/pull/152))
 
