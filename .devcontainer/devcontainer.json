@@ -3,7 +3,7 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "extensions": ["ms-python.python"],
+  "extensions": ["ms-python.python", "visualstudioexptteam.vscodeintellicode"],
   "remoteUser": "vscode",
   // "forwardPorts": [8000, 8080],
   "settings": {
