@@ -1,9 +1,9 @@
 ## Notes on the hands-on challenges
 
-- `jsac2023/` already has a scaffold to build CycloneDX SBOMs
+- `jsac2023/` already has a scaffold to build CycloneDX SBOM
 - A challenge is implementing a function incomplete
 - An implementation of a challenge is testable by `pytest`
-- You will be able to create a SBOM by the CLI tool (`jsac2023-cli`) after finishing the challenges
+- You will be able to create SBOM by the CLI tool (`jsac2023-cli`) after finishing the challenges
 - The CLI tools is built on [Typer](https://typer.tiangolo.com/)
 
 ```bash

@@ -11,6 +11,7 @@
   - Installed packages:
     - Dev/utility:
         - [Poetry](https://python-poetry.org/)
+        - tree
         - git
         - vim
         - curl
