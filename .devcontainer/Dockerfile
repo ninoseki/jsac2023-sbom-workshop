@@ -30,6 +30,7 @@ RUN apt update \
 	git \
 	jq \
 	vim \
+	tree \
 	# install HTTPie
 	&& curl -SsL https://packages.httpie.io/deb/KEY.gpg | apt-key add - \
 	&& curl -SsL -o /etc/apt/sources.list.d/httpie.list https://packages.httpie.io/deb/httpie.list \
@@ -60,6 +61,6 @@ RUN curl -Lo sbom-tool https://github.com/microsoft/sbom-tool/releases/latest/do
 	&& chmod +x sbom-tool \
 	&& sudo mv sbom-tool /usr/local/bin \
 	&& curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sudo sh -s -- -b /usr/local/bin \
-	&& curl -Lo osv-scanner https://github.com/google/osv-scanner/releases/download/v1.0.1/osv-scanner_1.0.1_linux_amd64 \
+	&& curl -Lo osv-scanner https://github.com/google/osv-scanner/releases/download/v1.0.2/osv-scanner_1.0.2_linux_amd64 \
 	&& chmod +x osv-scanner \
 	&& sudo mv osv-scanner /usr/local/bin
