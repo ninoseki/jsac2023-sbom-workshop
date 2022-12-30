@@ -18,7 +18,6 @@ component_version = "2.18.1"
 component = Component(
     name=component_name,
     version=component_version,
-    component_type=ComponentType.LIBRARY,
     purl=PackageURL(type="pypi", name=component_name, version=component_version),
 )
 

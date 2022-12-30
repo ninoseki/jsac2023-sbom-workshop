@@ -174,6 +174,7 @@ Note: SPDX supports the package URL since 2019. ([chapters/appendix-VI: Add PURL
 ```
 
 **With Package URL**
+
 ```json
 {
   "name": "requests",
