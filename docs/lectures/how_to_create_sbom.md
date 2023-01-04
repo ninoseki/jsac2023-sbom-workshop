@@ -1,12 +1,18 @@
 # How to create SBOM
 
-- [Very basics of CycloneDX/cyclonedx-python-lib](#very-basics-of-cyclonedxcyclonedx-python-lib)
-- [microsoft/sbom-tool](#microsoftsbom-tool)
-- [anchore/syft](#anchoresyft)
+- [DIY](#diy)
+  - [CycloneDX/cyclonedx-python-lib](#cyclonedxcyclonedx-python-lib)
+- [Tools](#tools)
+  - [microsoft/sbom-tool](#microsoftsbom-tool)
+  - [anchore/syft](#anchoresyft)
 
-## Very basics of CycloneDX/cyclonedx-python-lib
+## DIY
 
-- [CycloneDX/cyclonedx-python-lib](https://github.com/CycloneDX/cyclonedx-python-lib) ([Docs](https://cyclonedx-python-library.readthedocs.io/en/latest/))
+### CycloneDX/cyclonedx-python-lib
+
+> This CycloneDX module for Python can generate valid CycloneDX bill-of-material document containing an aggregate of all project dependencies.
+>
+> --- [CycloneDX/cyclonedx-python-lib](https://github.com/CycloneDX/cyclonedx-python-lib) ([Docs](https://cyclonedx-python-library.readthedocs.io/en/latest/))
 
 ```python
 from cyclonedx.model.bom import Bom
@@ -29,7 +35,9 @@ output_instance = get_instance(bom, output_format=OutputFormat.JSON)
 print(output_instance.output_as_string())
 ```
 
-## microsoft/sbom-tool
+## Tools
+
+### microsoft/sbom-tool
 
 > The SBOM tool is a highly scalable and enterprise ready tool to create SPDX 2.2 compatible SBOMs for any variety of artifacts.
 >
@@ -56,7 +64,7 @@ cat _manifest/spdx_2.2/manifest.spdx.json | jq ".packages[] | .externalRefs[]? |
 - Notes:
   - `sbom-tool` v0.3.0 overlooks a PyPI requirement which has extras.
 
-### How it works
+#### How it works
 
 `sbom-tool` scans the filesystem along with [microsoft/component-detection](https://github.com/microsoft/component-detection).
 
@@ -78,7 +86,7 @@ cat _manifest/spdx_2.2/manifest.spdx.json | jq ".packages[] | .externalRefs[]? |
 
 See https://github.com/microsoft/component-detection/blob/main/docs/feature-overview.md for more details.
 
-## anchore/syft
+### anchore/syft
 
 > A CLI tool and Go library for generating a Software Bill of Materials (SBOM) from container images and filesystems. Exceptional for vulnerability detection when used with a scanner like Grype.
 >
@@ -95,7 +103,7 @@ syft /app/python-vulnerable-app/ -o cyclonedx-json | jq ".components[] | .purl"
 syft /app/log4j-vulnerable-app/ -o cyclonedx-json | jq ".components[] | .purl"
 ```
 
-### How it works
+#### How it works
 
 `syft` scans the filesystem with supporting the following ecosystems and others.
 
