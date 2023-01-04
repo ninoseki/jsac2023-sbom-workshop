@@ -1,3 +1,5 @@
+# How to create SBOM
+
 - [Very basics of CycloneDX/cyclonedx-python-lib](#very-basics-of-cyclonedxcyclonedx-python-lib)
 - [microsoft/sbom-tool](#microsoftsbom-tool)
 - [anchore/syft](#anchoresyft)
@@ -61,7 +63,7 @@ cat _manifest/spdx_2.2/manifest.spdx.json | jq ".packages[] | .externalRefs[]? |
 `component-detection` supports the following ecosystems.
 
 | Ecosystem | Detection mechanisms                                                                                                       |
-|-----------|----------------------------------------------------------------------------------------------------------------------------|
+| --------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Cargo     | `Cargo.lock` or `Cargo.toml`                                                                                               |
 | CocoaPods | `Podfile.lock`                                                                                                             |
 | Go        | `go list -m -json all`, `go mod graph`, `go.mod`, `go.sum`                                                                 |
@@ -98,7 +100,7 @@ syft /app/log4j-vulnerable-app/ -o cyclonedx-json | jq ".components[] | .purl"
 `syft` scans the filesystem with supporting the following ecosystems and others.
 
 | Ecosystem            | Detection mechanisms                                                                  |
-|----------------------|---------------------------------------------------------------------------------------|
+| -------------------- | ------------------------------------------------------------------------------------- |
 | .NET                 | `.deps.json`                                                                          |
 | Cargo                | Inspecting Rust executable (`cargo-audit` is required), `Cargo.lock`                  |
 | CocoaPods            | `Podfile.lock`                                                                        |

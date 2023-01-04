@@ -1,3 +1,5 @@
+# Troubleshooting
+
 - [I want to install XXX in the dev container](#i-want-to-install-xxx-in-the-dev-container)
 - [I want to recreate the dev container](#i-want-to-recreate-the-dev-container)
 - [The interpreter is not set in the dev container](#the-interpreter-is-not-set-in-the-dev-container)

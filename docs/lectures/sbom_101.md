@@ -1,3 +1,5 @@
+# SBOM 101
+
 - [What is SBOM?](#what-is-sbom)
 - [SBOM use cases](#sbom-use-cases)
 - [SBOM standards](#sbom-standards)
@@ -77,9 +79,7 @@
     "created": "2022-12-18T01:41:33Z",
     "creators": []
   },
-  "documentDescribes": [
-    "SPDXRef-RootPackage"
-  ],
+  "documentDescribes": ["SPDXRef-RootPackage"],
   "packages": [
     {
       "name": "requests",

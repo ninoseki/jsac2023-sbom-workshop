@@ -1,4 +1,4 @@
-## Notes on the hands-on challenges
+# Notes on the hands-on challenges
 
 - `jsac2023/` already has a scaffold to build CycloneDX SBOM
 - A challenge is implementing a function incomplete

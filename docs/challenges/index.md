@@ -1,4 +1,4 @@
-## Challenges
+# Challenges
 
 Please read [notes on the hands-on challenges](./notes.md) beforehand.
 

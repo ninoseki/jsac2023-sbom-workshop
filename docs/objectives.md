@@ -1,4 +1,4 @@
-## Objectives
+# Objectives
 
 This workshop aims for demystifying the buzz word, SBOM, and make it possible to know its practical usages and also limitations through lectures and hands-on exercises.
 
