@@ -1,7 +1,7 @@
-## Timetable
+# Timetable
 
 | Time          | Type     | Topic                                       | Ref.                                             |
-|---------------|----------|---------------------------------------------|--------------------------------------------------|
+| ------------- | -------- | ------------------------------------------- | ------------------------------------------------ |
 | 00:00 - 00:10 | Lecture  | Introduction of VS Code + Dev Container     | [Link](./setup.md)                               |
 | 00:10 - 00:20 | Lecture  | SBOM 101                                    | [Link](./lectures/sbom_101.md)                   |
 | 00:20 - 00:30 | Lecture  | How to create SBOM                          | [Link](./lectures/how_to_create_sbom.md)         |

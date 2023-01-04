@@ -1,27 +1,29 @@
+# Introduction of the lab env
+
 - [Introduction of the lab env](#introduction-of-the-lab-env)
 - [How to setup the lab env](#how-to-setup-the-lab-env)
 - [How to confirm whether you are ready or not](#how-to-confirm-whether-you-are-ready-or-not)
-- [The lab env Directory structure](#the-lab-env-directory-structure)
+- [Directory structure](#directory-structure)
 
-## Introduction of the lab env
+## The lab env
 
 - Docker Desktop 2.0+ (Linux: Docker CE/EE 18+ and Docker Compose 1.2+)
 - VS Code + [Remote Development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
   - Dev Container: `python:3.10` (Debian 11)
   - Installed packages:
     - Dev/utility:
-        - [Poetry](https://python-poetry.org/)
-        - tree
-        - git
-        - vim
-        - curl
-        - wget
-        - [HTTPie](https://httpie.io/)
-        - jq
+      - [Poetry](https://python-poetry.org/)
+      - tree
+      - git
+      - vim
+      - curl
+      - wget
+      - [HTTPie](https://httpie.io/)
+      - jq
     - SBOM/OSV:
-        - [microsoft/sbom-tool](https://github.com/microsoft/sbom-tool)
-        - [anchore/syft](https://github.com/anchore/syft)
-        - [google/osv-scanner](https://github.com/google/osv-scanner)
+      - [microsoft/sbom-tool](https://github.com/microsoft/sbom-tool)
+      - [anchore/syft](https://github.com/anchore/syft)
+      - [google/osv-scanner](https://github.com/google/osv-scanner)
 
 ## How to setup the lab env
 
@@ -31,6 +33,8 @@ Please make sure to install the [Remote Development extension pack](https://mark
 git clone https://github.com/ninoseki/jsac2023-sbom-workshop
 code jsac2023-sbom-workshop
 ```
+
+(Note: if you are unable to run `code` command, please follow [this instruction](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line))
 
 Click the bottom left corner button (Open a Remote Window) of VS Code.
 
@@ -96,10 +100,10 @@ $ poetry run python ...
 $ poetry run pytest
 ```
 
-# The lab env directory structure
+## Directory structure
 
 | Path                                          | Desc.                               |
-|-----------------------------------------------|-------------------------------------|
+| --------------------------------------------- | ----------------------------------- |
 | `/app/log4j-vulnerable-app/gradle.lockfile`   | A Gradle lock file                  |
 | `/app/python-vulnerable-app/requirements.txt` | A Pip lock file                     |
 | `/workspaces/jsac2023-sbom-workshop`          | A VS Code workspace                 |

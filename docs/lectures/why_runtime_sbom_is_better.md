@@ -1,3 +1,5 @@
+# What is runtime SBOM
+
 - [SBOM types](#sbom-types)
 - [Why runtime SBOM is better](#why-runtime-sbom-is-better)
 
@@ -11,15 +13,15 @@ In this workshop, we will use the following binary classification:
 
 - Static SBOM:
   - Types: `Prospective` to `Analyzed`
-	- Def.: SBOM based on a lockfile
+  - Def.: SBOM based on a lockfile
 - Runtime SBOM:
   - Types: `Runtime`
-	- Def.: SBOM based on a running process
-	- Notes: `Deployed` can be said as a near-runtime SBOM
+  - Def.: SBOM based on a running process
+  - Notes: `Deployed` can be said as a near-runtime SBOM
 
 ## Why runtime SBOM is better
 
-Static SBOM is unreliable narrator since it only knows known.  It's very easy to come off the rail. If you do `pip install requests`, it is untraceable.
+Static SBOM is unreliable narrator since it only knows known. It's very easy to come off the rail. If you do `pip install requests`, it is untraceable.
 
 Also, it can do nothing if there is no lockfile.
 
