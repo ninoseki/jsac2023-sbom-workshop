@@ -61,8 +61,22 @@ sbom-tool generate -b ./ -bc /app/log4j-vulnerable-app/ -nsb http://example.com 
 cat _manifest/spdx_2.2/manifest.spdx.json | jq ".packages[] | .externalRefs[]? | .referenceLocator"
 ```
 
-- Notes:
-  - `sbom-tool` v0.3.0 overlooks a PyPI requirement which has extras.
+#### Notes
+
+`sbom-tool` does not work in a dev container with ARM based Mac (and also Windows?).
+
+Please try it in a host machine instead.
+
+- https://github.com/microsoft/sbom-tool/releases/tag/v0.3.1
+
+```bash
+# For M1/2 Mac
+wget https://github.com/microsoft/sbom-tool/releases/download/v0.3.1/sbom-tool-linux-x64
+chmod +x sbom-tool-osx-x64
+
+./sbom-tool-osx-x64 generate -b ./ -bc ./.devcontainer/python-vulnerable-app/ -nsb http://example.com -pn foo -pv 0.1 -ps foo
+./sbom-tool-osx-x64 generate -b ./ -bc ./.devcontainer/log4j-vulnerable-app/ -nsb http://example.com -pn foo -pv 0.1 -ps foo
+```
 
 #### How it works
 
