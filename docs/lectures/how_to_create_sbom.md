@@ -71,7 +71,7 @@ Please try it in a host machine instead.
 
 ```bash
 # For M1/2 Mac
-wget https://github.com/microsoft/sbom-tool/releases/download/v0.3.1/sbom-tool-linux-x64
+wget https://github.com/microsoft/sbom-tool/releases/download/v0.3.1/sbom-tool-osx-x64
 chmod +x sbom-tool-osx-x64
 
 ./sbom-tool-osx-x64 generate -b ./ -bc ./.devcontainer/python-vulnerable-app/ -nsb http://example.com -pn foo -pv 0.1 -ps foo
